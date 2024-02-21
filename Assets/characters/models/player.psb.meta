@@ -96,12 +96,12 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Layer 4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.05188562, y: 0.43543172}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 320
+      x: 321
       y: 281
       width: 351
       height: 84
@@ -1718,8 +1718,8 @@ ScriptedImporter:
     spritePosition: {x: 403, y: 619}
   - name: Layer 3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.43905914, y: 0.49775967}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -2509,8 +2509,8 @@ ScriptedImporter:
     spritePosition: {x: 221, y: 365}
   - name: Layer 4 copy
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.06047019, y: 0.47847748}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -5064,13 +5064,13 @@ ScriptedImporter:
     spritePosition: {x: 386, y: 703}
   - name: Layer 1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.48682776, y: 0.07636438}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 506
-      y: 4
+      y: 3
       width: 183
       height: 202
     spriteID: 9f7500563aea2bd4bbb216935c004617
@@ -5717,8 +5717,8 @@ ScriptedImporter:
     spritePosition: {x: 194, y: 582}
   - name: Layer 2 copy
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.35536724, y: 0.9126428}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -7057,13 +7057,13 @@ ScriptedImporter:
     spritePosition: {x: 525, y: 70}
   - name: Layer 2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.37947264, y: 0.91412705}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 162
-      y: 4
+      y: 3
       width: 150
       height: 406
     spriteID: c137d2a209ef99c40b499a75e7ed2bf2
