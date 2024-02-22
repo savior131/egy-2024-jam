@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         anim = GetComponentInChildren<Animator>();
-        
     }
 
     void Update()
@@ -54,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void JumpHandler()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
