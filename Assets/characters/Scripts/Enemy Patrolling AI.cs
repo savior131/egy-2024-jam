@@ -38,7 +38,7 @@ public class EnemyPatrollingAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("speed",Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("velocity",Mathf.Abs(rb.velocity.x));
         if (!inSight)
         Patrol();
         if (attacking) return;

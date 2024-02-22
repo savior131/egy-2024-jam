@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class tutorial : MonoBehaviour
@@ -9,6 +10,8 @@ public class tutorial : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private LayerMask whatIsEnemy;
     [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI text;
+    private int totIDX=0;
     private Vector2 vec;
     RaycastHit2D hit;
     // Start is called before the first frame update
@@ -26,20 +29,30 @@ public class tutorial : MonoBehaviour
         {
 
             
-                panel.SetActive(true);
-                enemy = true;
-                StartCoroutine(freezeTime());
+            panel.SetActive(true);
+            enemy = true;
+            StartCoroutine(freezeTime());
             hit.collider.gameObject.SetActive(false);
             
         }
     }
     private IEnumerator freezeTime()
     {
+        if(totIDX==0)
+        {
+        text.text = "press j to attack";
+        }
+        else
+        {
+        text.text = "press k to dash";
+          
+        }
         Time.timeScale = 0.4f;
         yield return new WaitForSeconds(1f);
         panel.SetActive(false);
         yield return new WaitForSeconds(0.2f);
         Time.timeScale = 1f;
+        totIDX = 1;
     }
     private void OnDrawGizmos()
     {

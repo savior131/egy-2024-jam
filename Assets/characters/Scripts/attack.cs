@@ -52,7 +52,7 @@ public class attack : MonoBehaviour
         col.gameObject.SetActive(false);
         }
         canAttack = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         attackIDX = 0;
     }
 }
