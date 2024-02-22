@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/characters/prefabs/Custom Enemy2 Pivot.prefab.meta
 guid: 20e9fd49d90051544ae442fd640e00e8
 PrefabImporter:
@@ -6,6 +7,10 @@ PrefabImporter:
 guid: 0851605490a599b46b6ac5cb681d93ea
 DefaultImporter:
 >>>>>>>> origin/tutorial:Assets/TextMesh Pro/Examples & Extras/Scenes/26 - Dropdown Placeholder Example.unity.meta
+=======
+guid: 0851605490a599b46b6ac5cb681d93ea
+DefaultImporter:
+>>>>>>> origin/squared
   externalObjects: {}
   userData: 
   assetBundleName: 
