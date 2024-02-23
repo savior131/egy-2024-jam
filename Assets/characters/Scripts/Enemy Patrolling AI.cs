@@ -11,18 +11,29 @@ public class EnemyPatrollingAI : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float detectionDistance;
     [SerializeField] float AttackDistance;
+    [SerializeField] GameObject soul;
     enum Type { Enemy1, Enemy2, Enemy3 };
     [SerializeField] Type enemyType;
     Transform player;
     Animator anim;
     //[SerializeField] UnityEvent attack;
     Rigidbody2D rb;
+    Collider2D enemyCollider;
+
+    Collider2D hitCollider;
+    [SerializeField]Transform hitTransform;
+    Vector2 size;
+    int enemyDamage;
+    [SerializeField] LayerMask playerLayer;
     
     float initPositionX;
     float[] points=new float[2];
     int pointIndex;
     bool inSight;
     bool attacking;
+    bool dead = false;
+
+    int enemyHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +44,32 @@ public class EnemyPatrollingAI : MonoBehaviour
         pointIndex=Random.Range(0,points.Length);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim=GetComponentInChildren<Animator>();
+        enemyCollider = GetComponent<Collider2D>();
+
+        switch (enemyType)
+        {
+            case Type.Enemy1:
+                enemyHealth = 100;
+                size = new Vector2(4f, 2f);
+                enemyDamage = 20;
+                break;
+            case Type.Enemy2:
+                enemyHealth = 10;
+                size = new Vector2(1, 1.5f);
+                enemyDamage = 5;
+                break;
+            case Type.Enemy3:
+                enemyHealth = 80;
+                size = new Vector2(2.2f, 2.2f);
+                enemyDamage = 10;
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(dead) return;
         anim.SetFloat("velocity",Mathf.Abs(rb.velocity.x));
         if (!inSight)
         Patrol();
@@ -123,6 +155,8 @@ public class EnemyPatrollingAI : MonoBehaviour
     {
         StartCoroutine(Attack());
         anim.SetTrigger("attack");
+        attackPlayer();
+
     }
     IEnumerator Attack()
     {
@@ -134,7 +168,41 @@ public class EnemyPatrollingAI : MonoBehaviour
     {
         StartCoroutine(Attack());
         anim.SetTrigger("jump");
+        attackPlayer();
         Vector2 direction = new Vector2(transform.localScale.x*15,12 );
         rb.velocity=direction;
+    }
+
+    public void decreaseHealth(int damage)
+    {
+        enemyHealth -= damage;
+        if(enemyHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        enemyCollider.enabled = false;
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("fade");
+        if(enemyType == Type.Enemy1 || enemyType == Type.Enemy3)
+            Instantiate(soul, transform.position, Quaternion.identity);
+        dead = true;
+    }
+
+    void attackPlayer()
+    {
+        hitCollider = Physics2D.OverlapBox(hitTransform.position, size, 0, playerLayer);
+        if(hitCollider != null) {
+            hitCollider.GetComponent<playerGetDamaged>().getDamage(enemyDamage);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(hitTransform.position, size);
     }
 }

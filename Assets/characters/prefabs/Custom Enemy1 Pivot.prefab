@@ -883,6 +883,7 @@ MonoBehaviour:
   speed: 2
   detectionDistance: 10
   AttackDistance: 4
+  soul: {fileID: 0}
   enemyType: 0
 --- !u!1 &8387718633657332501
 GameObject:
