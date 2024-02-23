@@ -19,13 +19,14 @@ public class soulSpawn : MonoBehaviour
     private void OnEnable()
     {
         soulAnim.SetTrigger("spawn");
+        StartCoroutine(enterSword());
+
 
     }
-    private void Start()
-    {
-        Debug.Log("coroutine started");
-        StartCoroutine(enterSword());
-    }
+    //private void Start()
+    //{
+    //    Debug.Log("coroutine started");
+    //}
 
     private void Update()
     {
@@ -43,5 +44,7 @@ public class soulSpawn : MonoBehaviour
         soulAnim.SetTrigger("enter");
         yield return new WaitForSecondsRealtime(3f);
         canEnter = false;
+        gameObject.SetActive(false);
+        gameObject.transform.localScale = new Vector2(1, 1);
     }
 }
