@@ -184,6 +184,7 @@ public class EnemyPatrollingAI : MonoBehaviour
 
     void Die()
     {
+        Rock.enemeybeaten = true;
         enemyCollider.enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("fade");

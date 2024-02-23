@@ -54,8 +54,16 @@ public class attack : MonoBehaviour
         col = Physics2D.OverlapCircle(swordTransform.position, radius, whatIsEnemy);
         if(col!=null)
         {
-            //col.gameObject.SetActive(false
+            if (col.gameObject.CompareTag("boss"))
+            {
+               col.GetComponent<bossHealth>().damage(damage);
+            }
+            else
+            {
+                
             col.GetComponent<EnemyPatrollingAI>().decreaseHealth(damage);
+            }
+            //col.gameObject.SetActive(false
         }
         canAttack = true;
         yield return new WaitForSeconds(0.4f);

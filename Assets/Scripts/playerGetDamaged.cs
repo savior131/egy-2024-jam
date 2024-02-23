@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerGetDamaged : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class playerGetDamaged : MonoBehaviour
     public void getDamage(int damage)
     {
         playerHealth -= damage;
+     
         Debug.Log(playerHealth);
         if (playerHealth <= 0) {
             playerDie();        
@@ -21,6 +23,6 @@ public class playerGetDamaged : MonoBehaviour
 
     void playerDie()
     {
-        Debug.Log("player dead");
+        SceneManager.LoadScene(0);
     }
 }

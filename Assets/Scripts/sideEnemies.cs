@@ -19,6 +19,6 @@ public class sideEnemies : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         instantiatedObject = Instantiate(enemy);
         instantiatedObject.transform.position = sides[Random.Range(0, sides.Length)].position;
-        
+            
     }
 }

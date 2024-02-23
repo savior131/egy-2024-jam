@@ -49,9 +49,9 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator TextDisplay()
     {
        
-        dialogueText.text = string.Empty;
         if (index < entries.Length)
         {
+        dialogueText.text = string.Empty;
             int speakerIndex = (int)entries[index].speaker;
               speakerName.text = characters[speakerIndex].name;
             if (characters[speakerIndex].characterImage != null)
@@ -73,6 +73,8 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
+            yield return new WaitForSeconds(1);
+            dialoguePanel.SetActive(false);
             StopAllCoroutines();
         }
        

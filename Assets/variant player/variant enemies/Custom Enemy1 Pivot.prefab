@@ -411,7 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyRange: 4
   speed: 2
-  detectionDistance: 17.04
+  detectionDistance: 25
   AttackDistance: 4
   soul: {fileID: 1561124203108906389, guid: 89effb433a744404d98c5c4ba6c750bd, type: 3}
   enemyType: 0
