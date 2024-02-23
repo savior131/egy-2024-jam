@@ -188,7 +188,11 @@ public class EnemyPatrollingAI : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("fade");
         if(enemyType == Type.Enemy1 || enemyType == Type.Enemy3)
-            Instantiate(soul, transform.position, Quaternion.identity);
+        {
+            soul.SetActive(true);
+            soul.transform.position = transform.position;
+        }
+           // Instantiate(soul, transform.position, Quaternion.identity);
         dead = true;
     }
 
