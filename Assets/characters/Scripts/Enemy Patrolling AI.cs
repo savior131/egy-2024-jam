@@ -46,7 +46,10 @@ public class EnemyPatrollingAI : MonoBehaviour
         FollowPlayer();
 
     }
-
+    private void OnDisable()
+    {
+        Rock.enemeybeaten=true;
+    }
 
     private void Patrol()
     {
