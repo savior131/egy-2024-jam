@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] LayerMask ground;
 
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     BoxCollider2D col;
     Animator anim;
 
