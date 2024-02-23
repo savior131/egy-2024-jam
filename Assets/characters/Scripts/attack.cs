@@ -7,6 +7,7 @@ public class attack : MonoBehaviour
     [SerializeField]private Transform swordTransform;
     [SerializeField] private float radius;
     [SerializeField] private LayerMask whatIsEnemy;
+    [SerializeField] AudioSource attackSfx;
     Collider2D col;
     Animator anim;
     int attackIDX=0;
@@ -22,6 +23,8 @@ public class attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J)&&canAttack) 
         {
+            attackSfx.Play();
+
             if(attackIDX==0)
             {
             anim.SetTrigger("attack");

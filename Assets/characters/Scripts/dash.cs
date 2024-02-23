@@ -10,12 +10,14 @@ public class dash : MonoBehaviour
     [SerializeField] float playerDashTime = 0.2f;
     [SerializeField] float playerDashSpeed = 10f;
     [SerializeField] TrailRenderer trail;
+    [SerializeField] AudioSource dashSfx;
     private Rigidbody2D playerRigidBody;
     private Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
+        trail.emitting = false;
         playerRigidBody = GetComponent<Rigidbody2D>();  
         playerAnimator = GetComponentInChildren<Animator>();
     }
@@ -33,6 +35,7 @@ public class dash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K) && canDash)
         {
+            dashSfx.Play();
             StartCoroutine(Dash());
         }
 

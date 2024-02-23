@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] LayerMask ground;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     BoxCollider2D col;
     Animator anim;
+
+    public bool canMove = true;
 
     void Start()
     {
@@ -23,6 +25,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!canMove) { 
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            anim.SetBool("inAir", true);
+
+            anim.SetBool("run", false);
+
+            return;
+        }
         MovementHandler();
         JumpHandler();
         AnimationHAndler();

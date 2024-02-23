@@ -11,6 +11,7 @@ public class tutorial : MonoBehaviour
     [SerializeField] private LayerMask whatIsEnemy;
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] AudioSource clockSfx;
     private int totIDX=0;
     private Vector2 vec;
     RaycastHit2D hit;
@@ -31,6 +32,7 @@ public class tutorial : MonoBehaviour
             
             panel.SetActive(true);
             enemy = true;
+            clockSfx.Play();
             StartCoroutine(freezeTime());
             hit.collider.gameObject.SetActive(false);
             
