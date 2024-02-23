@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3355033121251411891, guid: 8e0c7fbb4821c024aa478883d4f336eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1243677
+      value: -45.14976
       objectReference: {fileID: 0}
     - target: {fileID: 3355033121251411891, guid: 8e0c7fbb4821c024aa478883d4f336eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.17532
+      value: -3.8985996
       objectReference: {fileID: 0}
     - target: {fileID: 3355033121251411891, guid: 8e0c7fbb4821c024aa478883d4f336eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.089572206
       objectReference: {fileID: 0}
     - target: {fileID: 3355033121251411891, guid: 8e0c7fbb4821c024aa478883d4f336eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77,3 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a997d05ce0e12b48b992b8940b4a1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordPos: {fileID: 0}
