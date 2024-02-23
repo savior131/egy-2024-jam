@@ -13,6 +13,8 @@ public class attack : MonoBehaviour
     int attackIDX=0;
     bool canAttack=true;
 
+    int damage = 10;
+
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -52,7 +54,8 @@ public class attack : MonoBehaviour
         col = Physics2D.OverlapCircle(swordTransform.position, radius, whatIsEnemy);
         if(col!=null)
         {
-        col.gameObject.SetActive(false);
+            //col.gameObject.SetActive(false
+            col.GetComponent<EnemyPatrollingAI>().decreaseHealth(damage);
         }
         canAttack = true;
         yield return new WaitForSeconds(0.4f);
